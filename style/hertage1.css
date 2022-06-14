@@ -1,0 +1,177 @@
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color: antiquewhite;
+}
+/* Add a black background color to the top navigation */
+/*
+.topnav {
+    background-color: #333;
+    overflow: show;
+  }
+*/
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+#nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#footer{
+    padding: 0px 30px 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+    line-height: 24px;
+}
+
+.a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.a:hover{
+    color: #04AA6D;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 472;
+    height: 266;
+  }
+/* Centered text */
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 90px;
+    opacity: 0.8;
+}
+.img-banner{
+    animation-name: animation;
+    animation-duration: 3s;
+}
+
+@keyframes animation {
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+@media (max-width: 900px) {
+    #wrapper {
+        flex-direction: column;    
+    }
+    #right-content {
+        display: flex;
+    }
+
+    #section-id {
+        flex: 1;   
+    }
+    *{
+        font-size: 22px;
+        padding: 4px;
+    }
+
+    body{
+        padding: 5px;
+    }
+
+    .img-banner{
+        display: none;
+    }
+    #img{
+        width: 450;
+        height: 266;
+    }
+
+    #wp{
+        margin: auto;
+        width: 90%;
+        padding: 10px;
+    }
+    #homepage{
+        padding-left: 0;
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 90px;
+        opacity: 0; 
+    }
+    #nav{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    @keyframes animation {
+        0% {opacity: 0;}
+        100% {opacity: 0;}
+    }
+}
+#img:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+@media (max-width: 900px) {
+    td{
+        width: 300px;
+    }
+
+    #td_img{
+        width: 200px;
+        height: 200px;
+    }
+    #footer{
+        width: 465px;
+    }
+    #nav{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    #img-map{
+        width: 450px;
+    }
+    #name3{
+        overflow: scroll;
+    }
+}

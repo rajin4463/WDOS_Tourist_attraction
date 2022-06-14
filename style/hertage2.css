@@ -1,0 +1,138 @@
+*{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: aquamarine;
+}
+/* Add a black background color to the top navigation */
+
+.topnav {
+    background-color: #333;
+    overflow: show;
+  }
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: antiquewhite;
+    color: green;
+}
+  
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: white;
+    color: green;
+}
+
+#nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#footer{
+    padding: 0px 30px 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: 100px;
+    background-color: rgb(133, 53, 53);
+    line-height: 24px;
+}
+
+.a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.a:hover{
+    color: #04AA6D;
+}
+/* Image centering */
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 472;
+    height: 266;
+}
+/* Centered text */
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 90px;
+    animation-name: fade;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+/* Banner Text Fade In Animation */
+@keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 0.2;}
+    30% {opacity: 0.3;}
+    50% {opacity: 0.5;}
+    60% {opacity: 0.6;}
+    100% {opacity: 1;}   
+}
+
+#img:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* moblie view */
+@media (max-width: 900px) {
+    #lowerpara{
+        padding-left: 15px;
+    }
+    td{
+        width: 300px;
+    }
+
+    #td_img{
+        width: 200px;
+        height: 200px;
+    }
+    #footer{
+        width: 465px;
+    }
+    #nav{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    #img-map{
+        width: 450px;
+    }
+    #name3{
+        overflow: scroll;
+    }
+
+    .img-banner{
+        display: none;
+    }
+
+    #wrapper{
+        flex-direction: column;
+    }
+}
