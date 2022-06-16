@@ -63,6 +63,7 @@ body{
 .a:hover{
     color: #04AA6D;
 }
+
 /* Image centering */
 
 .center {
@@ -72,6 +73,7 @@ body{
     width: 472;
     height: 266;
 }
+
 /* Centered text */
 .centered{
     position: absolute;

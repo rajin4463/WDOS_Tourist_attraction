@@ -90,6 +90,8 @@ body{
     flex-direction: row;
 }
 
+
+/* ---------------------- Donations ---------------- */
 @media (max-width: 900px) {
     #wrapper {
         flex-direction: column;    
@@ -164,3 +166,4 @@ input { display: table-cell; height: 30px; border-radius: 5px;}
     color: white;
     background-color: #04AA6D;
 }
+/* ------------------------------------------------------------- */
