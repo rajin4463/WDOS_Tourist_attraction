@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+}
+/*
+nav{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    background: #333;
+    height: 100%;
+    width: 100%;
+}
+
+nav ul{
+    text-decoration: none;
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li #a{
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+
+nav ul li #a.active, #a:hover{
+    background: #4CAF50;
+    transition: .5s;
+    box-shadow: -2.5px -2.5px #4caf4f95;
+}
+
+nav ul li #a:hover{
+    background: #4CAF50;
+    transition: .5s;
+    box-shadow: 5px 5px #4caf4f95;
+}
+
+.mobidetail{
+    visibility: hidden;
+    display: none;
+}
+
+#menu{
+    visibility: hidden;
+}
+
+.mobidetailac{
+    visibility: hidden;
+    display: none;
+}
+*/
+body{
+    background-color: antiquewhite;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#wrapper{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 100%;
+    left: 50%;
+}
+
+.header{
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 40px;
+}
+
+.header h2{
+    margin: 0;
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    font-family: inherit;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-control.success input{
+    border-color: #2ecc71;
+}
+
+.form-control.error input{
+    border-color: #e74c3c;
+}
+
+.form-control.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control i{
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form-control.error small{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form button{
+    background-color: #8e44ad;
+    border: 2px solid #8e44ad;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-family: inherit;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.radio-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.radio-control #error-sysmbol{
+    visibility: hidden;
+}
+
+.radio-control.success #error-sysmbol.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.radio-control.error #error-sysmbol.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.radio-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.radio-control.error small{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+
+#promt{
+    background-color: #f0f0f0;
+    display: none;
+    margin: auto;
+    width: 20%;
+    left: 40%;
+    bottom: 50%;
+    font-size: 30px;
+    font-family: inherit;
+    position: absolute;   
+    border: #04AA6D solid 5px;
+    border-radius: 5px;
+}
+
+#close{
+    display: block;
+    margin: auto;
+    height: 30px;
+    width: 20%;
+    color: #fff;
+    background-color: #04AA6D;
+    border: 2px solid #04AA6D;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#test-para{
+    padding: 2%;
+}
+
+@media (max-width:900px) {
+    #promt{
+        width: 60%;
+        left: 20%;
+        padding: 10%;
+        bottom: 35%;
+        font-size: 25px;
+        border: #04AA6D solid 5px;
+    }
+    #close{
+        width: 30%;
+    }
+    
+}
+
+#back{
+    background-color: antiquewhite;
+    border: 2px solid antiquewhite;
+    color: #333;
+    display: block;
+    font-size: 15px;
+    font-family: inherit;
+    padding: 10px;
+    width: 10%;
+    cursor: pointer;
+}

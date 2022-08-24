@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta lang="eng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Purchase</title>
+        <link rel="stylesheet" href="style/purchase.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.webp">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.webp">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.webp">
+        <link rel="manifest" href="images/site.webmanifest">
+        <link rel="mask-icon" href="images/safari-pinned-tab.webp" color="#5bbad5">
+        <link rel="shortcut icon" href="images/favicon.webp">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="images/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    </head>
+    <div>
+        <body>
+            <section>
+                <!--Navigation code-->
+                <!--Desktop nav bar-->
+                <nav class="lap">
+                    <img src="images/logo.webp" alt="logo" width="90" height="80" class="logo">
+                    <ul>
+                        <li><a href="index.html" id="a">Home</a></li>
+                        <li><a href="wildlife.html" id="a">Types of Wildlife attrations</a></li>
+                        <li><a href="beaches.html" id="a">Beaches</a></li>
+                        <li><a href="activites.html" id="a">Activites</a></li>
+                        <li><a href="donations.html" id="a">Donations</a></li>
+                    </ul>
+                </nav>
+                <!--Mobile nav bar-->
+                <details class="mobidetail">
+                    <summary><img src="images/logo.webp" alt="logo" width="90" height="80" class="logo">
+                        <!--<label for="bnt-1" id="menu"><img src="images/menu_icon.png" alt="menu_icon"></label>-->
+                    </summary>
+                    <nav class="moblie">
+                            <!--<img src="images/logo.webp" alt="logo" width="90" height="80" class="logo">-->
+                            <ul>
+                                <li><a href="index.html" id="a">Home</a></li>
+                                <li><a href="wildlife.html" id="a">Types of Wildlife attrations</a></li>
+                                <li><a href="beaches.html" id="a">Beaches</a></li>
+                                <li><a href="activites.html" id="a">Activites</a></li>
+                                <li><a href="donations.html" id="a">Donations</a></li>
+                            </ul>
+                    </nav>
+                </details>
+                <h2></h2><br><br><br><br>
+            </section>
+            <section id="wrapper">
+                <div id="hdiv3">
+                    <form action="get" id="form">
+                        <label for="activity">Select activity:</label>
+                        <select name="acdrop" id="acdrop" required>
+                            <option value="Tea Factory">Tea Factory</option>
+                            <option value="Elephant Rescue">Elephant Rescue</option>
+                            <option value="Sigiriya">Sigiriya</option>
+                        </select><br><br>
+                        
+                        <label for="choice">Choice of ticket:</label>
+                        <select id="ticket" required>
+                            <option value="Local-Child">Local Pass- Child (3 to 12 years)</option>
+                            <option value="Foregin-Child">Foreigner Pass- Child (3 to 12 years)</option>
+                            <option value="Local-Adult">Local Passs- Adult</option>
+                            <option value="Foregin-Adult">Foreigner Pass- Adult</option>
+                            <option value="Annual-Foreign">Annual Pass- Foreign</option>
+                            <option value="Annual-Local">Annual Pass- Local </option>
+                        </select><br><br>
+                        <label for="time">Duration:</label>
+                        <select name="duration" id="time" required>
+                            <option value="3 hours">3 Hrs</option>
+                            <option value="12 hours">1&frasl;2 day</option>
+                            <option value="24 hours">Full Day</option>
+                            <option value="48 hours">2 Days</option>
+                        </select><br><br>
+                        
+                        <label>Number of tickets: </label>
+                        <input type="text" id="number-of-tick" size="10" ><br><br>
+
+                        <label for="extrats">Extras: </label>
+                        <label for="food">Food Tokens </label>
+                        <input type="checkbox" id="food_token"><br><br><br>
+                        <p id="notice"><b>*Childern under 3 entrance is free</b></p>
+                        <button type="submit" id="submit"><span class="material-symbols-outlined">
+                            add_shopping_cart
+                            </span>
+                        </button>
+                        <button id="fav_add"><span class="material-symbols-outlined">
+                            favorite
+                            </span>
+                        </button>
+                        <button id="show_cart"><span class="material-symbols-outlined">
+                            shopping_cart
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                <div class="cart" id="cart">
+                    <div class="image"><img src="images/shopping_cart.svg" alt=""></div>
+                    <h1>Cart</h1>
+                    <div id="no_cart">
+                        <p id="nocarttext"><center>No items in Cart</center></p>
+                    </div>
+                    <table id="out">
+                    </table>
+                    <table id="tot_table">
+                        <th><hr><b><i>Total</i></b></th>
+                        <th><hr><i id="total">Rs.0/=</i></th>
+                    </table>
+                    <button id="close"><span class="material-symbols-outlined">
+                        close
+                        </span>
+                    </button>
+                    <button id="remove"><span class="material-symbols-outlined">
+                        remove_shopping_cart
+                        </span>Clear Cart
+                    </button>
+                    <button id="checkout"><span class="material-symbols-outlined">
+                        shopping_cart_checkout
+                        </span>Check Out
+                    </button>
+                    <button id="loyal"><span class="material-symbols-outlined">
+                        card_membership
+                        </span>Check Loyalty Points
+                    </button>
+                    <button id="order_fav" alt="order favorit"><span class="material-symbols-outlined">
+                        heart_plus
+                        </span>Order Favourit
+                    </button>
+                </div>
+            </section>
+        </body>
+    </div>
+    <script src="scripts/index.js"></script>
+</html>

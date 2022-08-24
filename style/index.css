@@ -4,8 +4,6 @@
     margin: 0;
     padding: 0;
 }
-
-
 body{
     background-color: antiquewhite;
 }
@@ -24,34 +22,60 @@ p{
     opacity: 0.7;
 }
 /* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
+details{
+    visibility: hidden;
+}
+nav{
     text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    background: #333;
+    height: 100%;
+    width: 100%;
+}
+
+nav ul{
+    text-decoration: none;
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li #a{
     font-size: 17px;
-}
-  
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-  
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #04AA6D;
+    text-decoration: none;
     color: white;
+    padding: 7px 13px;
+    border-radius: 3px;
 }
-
-#nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+nav ul li #a.active, #a:hover{
+    background: #4CAF50;
+    transition: .5s;
+    box-shadow: -2.5px -2.5px #4caf4f95;
 }
-
-/* Footer styling */
+nav ul li #a:hover{
+    background: #4CAF50;
+    transition: .5s;
+    box-shadow: 5px 5px #4caf4f95;
+}
+.mobidetail{
+    visibility: hidden;
+    display: none;
+}
+#menu{
+    visibility: hidden;
+}
+.mobidetailac{
+    visibility: hidden;
+    display: none;
+}
+/*---------------- footer -------------------*/
 #footer{
     padding: 0px 30px 20px;
     font-size: 20px;
@@ -64,20 +88,20 @@ p{
     background-color: #333;
     line-height: 24px;
 }
-
-.a{
+.b{
     color: aliceblue;
     text-decoration: none;
 }
 
-.a:hover{
+.b:hover{
     color: #04AA6D;
 }
-
+/* --------------------------------------------*/
 /* image styling */
 #img{
     border-radius: 5%;
-    padding: 5px; margin:5px
+    padding: 5px; 
+    margin:5px
 }
 
 /* flex grids */
@@ -92,11 +116,164 @@ p{
 #right-content{
     flex:1;
 }
+/* --------------------- nav bar mobile view -------------------*/
+@media all and (max-width: 968px) {
+    details{
+        visibility: visible;
+        background: #333;
+        height: 5.5rem;
+    }
+    details > summary{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        cursor: pointer;
+        list-style: none;  
+        
+    }
+    details > summary::after{
+        content: url(../images/menu_icon.png);
+        width: 2.5rem;
+        height: 2.5rem;
+        display: inline-flex;
+        transition: content 0.3 ease;
+    }
+    details[open] > summary::after{
+        transition: 3s;
+        content: url(../images/close_nav.png);
+    }
+    details[open] > nav{
+        height: 414px;
+        border-top: #04AA6D 5px solid;
+        transition: .4s;
+        border-radius: 5px;
+    }
+    details > summary::-webkit-details-marker{
+        display: none;
+    }
+    .mobidetail{
+        visibility: visible;
+        display: block;
+    }
+    .lap{
+        visibility: hidden;
+        display: none;
+    }
+    nav ul{
+        margin-right: 0px;
+        float:left;
+    }
+    nav .logo{
+        padding-left: 0px;
+        width: 100%-3%;
+    }
+    nav ul li, nav ul ul li{
+        display: block;
+        width: 100%;
+    }
+    nav ul ul{
+        top: 70px;
+        position: static;
+        float: none;
+        visibility: visible;
+    }
+    #menu{
+        float: right;
+        visibility: visible;
+        display: block;
+        cursor: pointer;
+    }
+    .centered{
+        visibility: hidden;
+    }
+    
+}
+/* ------------------------------------------------------------ */
+
+/*------------------- moblie nav for activity page --------------*/
+@media all and (max-width: 968px) {
+    .mobidetailac{
+        visibility: visible;
+        display: block;
+        background: #333;
+        height: 5.5rem;
+    }
+    .mobidetailac > summary{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        cursor: pointer;
+        list-style: none;  
+        
+    }
+    .mobidetailac > summary::after{
+        content: url(../images/menu_icon.png);
+        width: 2.5rem;
+        height: 2.5rem;
+        display: inline-flex;
+        transition: content 0.3 ease;
+    }
+    .mobidetailac[open] > summary::after{
+        transition: 3s;
+        content: url(../images/close_nav.png);
+    }
+    .mobidetailac[open] > nav{
+        height: 480px;
+        border-top: #04AA6D 5px solid;
+        transition: .4s;
+        border-radius: 5px;
+    }
+    .mobidetailac > summary::-webkit-details-marker{
+        display: none;
+    }
+    .mobidetailac{
+        visibility: visible;
+        display: block;
+    }
+    .lap{
+        visibility: hidden;
+        display: none;
+    }
+    .moblie ul{
+        margin-right: 0px;
+        float:left;
+    }
+    .moblie .logo{
+        padding-left: 0px;
+        width: 100%-3%;
+    }
+    .moblie ul li, .moblie ul ul li{
+        display: block;
+        width: 100%;
+    }
+    .moblie ul ul{
+        top: 70px;
+        position: static;
+        float: none;
+        visibility: visible;
+    }
+    #menu{
+        float: right;
+        visibility: visible;
+        display: block;
+        cursor: pointer;
+    }
+    .centered{
+        visibility: hidden;
+    }
+    
+}
+/* ------------------------------------------------------------ */
 
 /* --------------------- mobile view --------------------------*/
 @media (max-width: 900px) {
+    #img{
+        width: 100%;
+        height: 100%;
+    }
     #wrapper {
-        flex-direction: column;    
+        flex-direction: column;  
+        height: 100%;  
     }
     #right-content {
         display: flex;
@@ -109,17 +286,12 @@ p{
         font-size: 22px;
         padding: 4px;
     }
-
-    body{
-        padding: 5px;
-    }
-
     .img-banner{
         display: none;
     }
     #img{
-        width: 450;
-        height: 266;
+        width: 100%;
+        height: 100%;
     }
 
     #wp{
@@ -131,6 +303,7 @@ p{
         padding-left: 0;
     }
     .centered{
+        visibility: hidden;
         opacity: 0;
     }
 }
@@ -151,6 +324,9 @@ p{
 #li4{
     padding: 1cm;
     margin: 0;
+}
+.burger-nav{
+    display: none;
 }
 /* ------------------------------------------------------------- */
 
@@ -195,12 +371,7 @@ th{
         height: 200px;
     }
     #footer{
-        width: 465px;
-    }
-    #nav{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        width: 100%-3%;
     }
     #img-map{
         width: 450px;
@@ -208,13 +379,17 @@ th{
     #name3{
         overflow: scroll;
     }
+    *{
+        padding: 0;
+        margin: 0;
+    }
 }
 /* ------------------------------------------------------------- */
 
 
 /* ---------------------- beaches ---------------- */
 #beaches{
-    padding-left: 5px;
+    padding-left: 0px;
 }
 
 /* button styling */
