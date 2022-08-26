@@ -134,7 +134,7 @@ function pricecal(time, ticket, activity, food, num, table){
     else if(ticket==="Local-Adult"){
         if(time === "12 hours"){
             foodTotal = food * 500;
-            price = Lchild + activityprice + Lhalf + foodTotal;
+            price = Ladult + activityprice + Lhalf + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
@@ -146,7 +146,7 @@ function pricecal(time, ticket, activity, food, num, table){
         }
         else if(time === "24 hours"){
             foodTotal = food * 500;
-            price = Lchild + activityprice + Lfull + foodTotal;
+            price = Ladult + activityprice + Lfull + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
@@ -170,7 +170,7 @@ function pricecal(time, ticket, activity, food, num, table){
         }
         else{
             foodTotal = food * 500;
-            price = Lchild + activityprice + foodTotal;
+            price = Ladult + activityprice + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
@@ -184,7 +184,7 @@ function pricecal(time, ticket, activity, food, num, table){
     else if(ticket==="Foregin-Child"){
         if(time === "12 hours"){
             foodTotal = food * 500;
-            price = Lchild + activityprice + Fhalf + foodTotal;
+            price = Fchild + activityprice + Fhalf + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
@@ -196,7 +196,7 @@ function pricecal(time, ticket, activity, food, num, table){
         }
         else if(time === "24 hours"){
             foodTotal = food * 500;
-            price = Lchild + activityprice + Ffull + foodTotal;
+            price = Fchild + activityprice + Ffull + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
@@ -221,7 +221,7 @@ function pricecal(time, ticket, activity, food, num, table){
         }
         else{
             foodTotal = food * 500;
-            price = Lchild + activityprice + foodTotal;
+            price = Fchild + activityprice + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
