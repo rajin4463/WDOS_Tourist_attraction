@@ -35,7 +35,7 @@ let total = 0;
 let activityprice = 1000;
 let Annual_Pass_Local = 4500;
 let Annual_Pass_Foreign = 15000;
-let Fadult = 5000;
+let Fadult = 50000;
 let Fchild = 2500;
 let Ladult = 1000;
 let Lchild = 500;
@@ -207,7 +207,7 @@ function pricecal(time, ticket, activity, food, num, table){
             }
 
         }
-        else if(duration.value === "48 hours"){
+        else if(time === "48 hours"){
             price = Fchild + activityprice + (Lfull * 2) + foodTotal;
             foodTotal = food * 500;
             total += price * num;
@@ -258,7 +258,7 @@ function pricecal(time, ticket, activity, food, num, table){
                 total = 0;
             }
         }
-        else if(duration.value === "48 hours"){
+        else if(time === "48 hours"){
             price = Fadult + activityprice + (Ffull * 2) + foodTotal;
             foodTotal = food * 500;
             total += price * num;
