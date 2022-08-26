@@ -28,7 +28,7 @@ button{
     font-size: 90px;
     opacity: 0.7;
 }
-/* Style the links inside the navigation bar */
+/* Style the links inside the navigation bar *//*
 details{
     visibility: hidden;
 }
@@ -82,6 +82,7 @@ nav ul li #a:hover{
     visibility: hidden;
     display: none;
 }
+*/
 /* image styling */
 #img{
     border-radius: 5%;
@@ -101,7 +102,7 @@ nav ul li #a:hover{
 #right-content{
     flex:1;
 }
-/* --------------------- nav bar mobile view -------------------*/
+/* --------------------- nav bar mobile view -------------------
 @media all and (max-width: 968px) {
     details{
         visibility: visible;
@@ -172,8 +173,24 @@ nav ul li #a:hover{
         visibility: hidden;
     }
     
-}
+}*/
 /* ------------------------------------------------------------ */
+#back{
+    background-color: #333;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-family: inherit;
+    padding: 10px;
+    width: 10%;
+    cursor: pointer;
+}
+
+@media (max-width:900px) {
+    #back{
+        width: 15%;
+    }
+}
 
 /* form styling */
 #form{

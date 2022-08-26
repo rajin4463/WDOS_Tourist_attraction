@@ -130,40 +130,7 @@ body{
     border-radius: 15px;
 }
 
-/* form */
-form{
-    border: 2px solid black;
-    border-style: dashed;
-    padding: 10px;
-    font-size: 20px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-/* aligning the input feilds */
-
-form  { display: table;      }
-p     { display: table-row;  }
-label { display: table-cell;}
-input { display: table-cell; height: 30px; border-radius: 5px;}
-
-#select{
-    font-size: 20px;
-}
-#btn1{
-    width: 90px;
-    height: 30px;
-    margin-left: 42%;
-    margin-right: 2%;
-    color: white;
-    background-color: #04AA6D;
-}
-#btn2{
-    margin-left: 2%;
-    width: 90px;
-    height: 30px;
-    color: white;
-    background-color: #04AA6D;
+#donate-text{
+    text-decoration: none;
 }
 /* ------------------------------------------------------------- */

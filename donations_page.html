@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,21 +18,21 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
+<body>
     <a href="donations.html">    
         <button id="back"><span class="material-symbols-outlined">
             arrow_back
             </span>Go back
         </button>
     </a>
-<body>
     <div id="wrapper">
         <div class="container">
             <div class="header">
-                <h2>Donate.</h2>
+                <h1>Donate.</h1>
             </div>
             <form class="form" id="form">
                 <div class="form-control">
-                    <label>Full name</label>
+                    <label for="full-name">Full name</label>
                     <input type="text" id="full-name" placeholder="example example">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
@@ -40,14 +40,14 @@
                 </div>
 
                 <div class="form-control">
-                    <label>Email</label>
+                    <label for="email">Email</label>
                     <input type="email" id="email" placeholder="example@example.com">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small><br>
                 </div>
                 <div class="form-control">
-                    <label>Amount </label>
+                    <label for="amount">Amount </label>
                     <select id="amount">
                         <option value="100">100</option>
                         <option value="200">200</option>
@@ -61,18 +61,18 @@
 
                 <div class="radio-control">
                     <input type="radio" name="amx" id="card-type">
-                    <label><i class="fa fa-cc-amex" style="font-size:24px"></i></label>
+                    <label for="card-type"><i class="fa fa-cc-amex" style="font-size:24px"></i></label>
                     <input type="radio" name="visa" id="card-type">
-                    <label><i class="fa fa-cc-visa" style="font-size:24px"></i></label>
+                    <label for="card-type"><i class="fa fa-cc-visa" style="font-size:24px"></i></label>
                     <input type="radio" name="master" id="card-type">
-                    <label><i class="fa fa-cc-mastercard" style="font-size:24px"></i></label>
+                    <label for="card-type"><i class="fa fa-cc-mastercard" style="font-size:24px"></i></label>
                     <i class="fas fa-check-circle" id="error-sysmbol"></i>
                     <i class="fas fa-exclamation-circle" id="error-sysmbol"></i>
                     <small>Error message</small>
                 </div><br>
                 
                 <div class="form-control">
-                    <label>Card Number</label>
+                    <label for="card-num">Card Number</label>
                     <input type="text" id="card-num">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="form-control">
-                    <label>CVC</label>
+                    <label for="cvc-num">CVV</label>
                     <input type="number" id="cvc-num">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>

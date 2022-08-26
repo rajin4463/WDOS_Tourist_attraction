@@ -7,17 +7,29 @@ let no_cart = document.getElementById("no_cart");
 let food = document.getElementById("food_token");
 let activity = document.getElementById("acdrop");
 let num = document.getElementById('number-of-tick');
+let temp = document.getElementById('temp');
+
+let loyaltyPoints = 0;
+let overallHead = 0;
 
 //Init function
 window.addEventListener("load", function(){
     document.getElementById('form').reset(); //reset form to default values (need for firefox)
     let total;
     let itemsincart;
+
+    if(localStorage.getItem(`loyalty points`)>0) {
+        //overallHead = parseInt(localStorage.getItem(`heads`));
+    }
+    else {
+        //overallHead = 0;
+        parseInt(localStorage.setItem(`loyalty points`, 0));
+        //parseInt(localStorage.setItem(`heads`, 0));
+    }
 });
 
 //total 
 let total = 0;
-let token = 0;
 
 //prices
 let activityprice = 1000;
@@ -36,140 +48,268 @@ let Ffull = 1000;
 
 
 //cart table (function to gernerate table to display cart information)
-function carttable(total, ticket, time, price, activity){
+function carttable(total, ticket, time, price, activity, num){
     let table = document.getElementById("out");
     let row = table.insertRow(0);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
-    cell1.innerHTML = `You Have Purchased a ${activity} ticket <br> for ${ticket} X ${num.value} (${time}).\n`;
-    cell2.innerHTML = `${price * num.value}/=`;
+    cell1.innerHTML = `You Have Purchased a ${activity} ticket <br> for ${ticket} X ${num} (${time}).\n`;
+    cell2.innerHTML = `${price * num}/=`;
 
     tot.innerHTML = `Rs.${total}/=`;
     cart.style.visibility = "visible";
 }
 
-function annualcarttable(total, ticket, price){
+function annualcarttable(total, ticket, price, num){
     let table = document.getElementById("out");
     let row = table.insertRow(0);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
-    cell1.innerHTML = `You Have Purchased <br> ${ticket} X ${num.value} ticket(s).\n`;
-    cell2.innerHTML = `${price * num.value}/=`;
+    cell1.innerHTML = `You Have Purchased <br> ${ticket} X ${num} ticket(s).\n`;
+    cell2.innerHTML = `${price * num}/=`;
 
     tot.innerHTML = `Rs.${total}/=`;
     cart.style.visibility = "visible";
 }
 
 //price calculation function
-function pricecal(time, ticket, activity, food){   
+function pricecal(time, ticket, activity, food, num, table){   
     //display no cart item 
     if(itemsincart>=1){
         no_cart.style.display="none";
     }
-    //food token
-    if(food == true){
-        token = 500;
-    }
-    else{
-        token = 0;
-    }
    //calculate price & add to cart for ticket type.
    let price = 0;
-   if(num.value>=1) {
-        if(ticket==="Local-Child"){
-            if(time === "12 hours"){
-                price = Lchild + activityprice + Lhalf + token;
-                console.log(price);
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
-            }
-            else if(time === "24 hours"){
-                price = Lchild + activityprice + Lfull + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
+    if(ticket==="Local-Child"){
+        if(time === "12 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + Lhalf + foodTotal;
+            console.log(price);
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
             }
             else{
-                price = Lchild + activityprice + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
             }
         }
-        else if(ticket==="Local-Adult"){
-            if(time === "12 hours"){
-                price = Ladult + activityprice + Lhalf + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
-            }
-            else if(time === "24 hours"){
-                price = Ladult + activityprice + Lfull + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
+        else if(time === "24 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + Lfull + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
             }
             else{
-                price += Ladult + activityprice + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
             }
         }
-        else if(ticket==="Foregin-Child"){
-            if(time === "12 hours"){
-                price = Fchild + activityprice + Fhalf + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
-            }
-            else if(time === "24 hours"){
-                price = Fchild + activityprice + Ffull + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
+        else if(time === "48 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + (Lfull * 2) + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
             }
             else{
-                price += Fchild + activityprice + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-                cart.style.visibility = "visible";
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
             }
-        }
-        else if(ticket==="Foregin-Adult"){
-            if(time === "12 hours"){
-                price = Fadult + activityprice + Fhalf + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-            }
-            else if(time === "24 hours"){
-                price = Fadult + activityprice + Ffull + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-            }
-            else{
-                price += Fadult + activityprice + token;
-                total += price * num.value;
-                carttable(total, ticket, time, price, activity);
-            }
-        }
-        else if(ticket==="Annual-Foreign"){
-            price += Annual_Pass_Foreign;
-            total += price * num.value;
-            annualcarttable(total, ticket, price);
-        }
-        else if(ticket==="Annual-Local"){
-            price += Annual_Pass_Local;
-            total += price * num.value;
-            annualcarttable(total, ticket, price);
         }
         else{
-            alert("Pls select a vaild option");
+            foodTotal = food * 500;
+            price = Lchild + activityprice + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
         }
-   } else {
-    alert('Please select a amount');
-   }
+    }
+    else if(ticket==="Local-Adult"){
+        if(time === "12 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + Lhalf + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+        else if(time === "24 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + Lfull + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+        else if(time === "48 hours"){
+            price = Ladult + activityprice + (Lfull * 2) + foodTotal;
+            foodTotal = food * 500;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+        else{
+            foodTotal = food * 500;
+            price = Lchild + activityprice + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+    }
+    else if(ticket==="Foregin-Child"){
+        if(time === "12 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + Fhalf + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+        else if(time === "24 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + Ffull + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+
+        }
+        else if(duration.value === "48 hours"){
+            price = Fchild + activityprice + (Lfull * 2) + foodTotal;
+            foodTotal = food * 500;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+        else{
+            foodTotal = food * 500;
+            price = Lchild + activityprice + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+            
+        }
+    }
+    else if(ticket==="Foregin-Adult"){
+        if(time === "12 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + Fhalf + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+        else if(time === "24 hours"){
+            foodTotal = food * 500;
+            price = Lchild + activityprice + Ffull + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+        else if(duration.value === "48 hours"){
+            price = Fadult + activityprice + (Lfull * 2) + foodTotal;
+            foodTotal = food * 500;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+        else{
+            foodTotal = food * 500;
+            price = Lchild + activityprice + foodTotal;
+            total += price * num;
+            if(table == true){
+                carttable(total, ticket, time, price, activity, num);
+            }
+            else{
+                temp.innerHTML = `Total is Rs.${total}/=`;
+                total = 0;
+            }
+        }
+    }
+    else if(ticket==="Annual-Foreign"){
+        foodTotal = food * 500;
+        price += Annual_Pass_Foreign + foodTotal;
+        total += price * num;
+        if(table == true){
+            annualcarttable(total, ticket, price, num);
+        }
+        else{
+            temp.innerHTML = `Total is Rs.${total}/=`;
+            total = 0;
+        }
+    }
+    else if(ticket==="Annual-Local"){
+        foodTotal = food * 500;
+        price += Annual_Pass_Local + foodTotal;
+        total += price * num;
+        if(table == true){
+            annualcarttable(total, ticket, price, num);
+        }
+        else{
+            temp.innerHTML = `Total is Rs.${total}/=`;
+            total = 0;
+        }
+    }
+    else{
+        alert("Pls select a vaild option");
+    }
 }
 
 //Add item to cart
@@ -180,15 +320,32 @@ submit.addEventListener("click",function(addtocart){
 
     let ticket = document.getElementById("ticket").value;
     let time = document.getElementById("time").value;
-    pricecal(time, ticket, activity.value, food.checked);
+    if(num.value>=1){
+        pricecal(time, ticket, activity.value, food.value, num.value, true);
+        temp.innerHTML = '';
+    } else {
+        alert('Please select a amount(s)');
+    } 
 
     //calculate loyalty points 
-    if(itemsincart>3){
-        let loyaltiy = localStorage.setItem(`loyalty points`, itemsincart*20);
+    //overallHead = overallHead + num.value;
+    if (num.value >= 3){
+        if(localStorage.getItem(`loyalty points`)>0){
+            let loyaltyPoints = parseInt(localStorage.getItem(`loyalty points`));
+            loyaltyPoints += num.value * 20;
+            localStorage.setItem(`loyalty points`, parseInt(loyaltyPoints));
+        }
+        else {
+            loyaltyPoints = num.value * 20;
+            localStorage.setItem(`loyalty points`, parseInt(loyaltyPoints));
+        }
     }
     else{
-        let loyaltiy = localStorage.setItem(`loyalty points`, 0);
+        loyaltyPoints = 0;
     }
+
+    getLoyalPoints = localStorage.getItem(`loyalty points`);
+
 });
 
 //disable duration & food token for annual pass
@@ -256,10 +413,11 @@ checkout.addEventListener('click',function(){
 let fadd = document.getElementById('fav_add');
 fadd.addEventListener('click', function(addtofavourite){
     addtofavourite.preventDefault();
+    let store_num = localStorage.setItem(`tic-num`, num.value);
     let store_acc = localStorage.setItem(`activity`,activity.value);
     let store_type = localStorage.setItem(`ticket`, ticket.value);
     let store_time = localStorage.setItem(`duration`, time.value);
-    let store_extra = localStorage.setItem(`extras`, food.checked);
+    let store_extra = localStorage.setItem(`extras`, food.value);
     alert("Your order has been added to favourites");
 });
 
@@ -268,11 +426,12 @@ fadd.addEventListener('click', function(addtofavourite){
 let order_fav = document.getElementById('order_fav');
 order_fav.addEventListener('click', function(orderfav){
     itemsincart += 1;
+    let get_num = localStorage.getItem(`tic-num`);
     let get_acc = localStorage.getItem(`activity`);
     let get_type = localStorage.getItem(`ticket`);
     let get_time = localStorage.getItem(`duration`);
     let get_extra = localStorage.getItem(`extras`);
-    pricecal(get_time, get_type, get_acc, get_extra);
+    pricecal(get_time, get_type, get_acc, get_extra, get_num, true);
     alert("Favourite Items added to cart");
 });
 
@@ -280,6 +439,25 @@ order_fav.addEventListener('click', function(orderfav){
 let loyal = document.getElementById('loyal');
 
 loyal.addEventListener('click', function(evt){
-    let points = localStorage.getItem('loyalty points');
-    alert(`Your loyaltiy points are ${points}`);
+    //evt.preventDefault
+    alert(`Your loyalty points are ${getLoyalPoints}`);
+    
+});
+
+
+//current order event listeners
+num.addEventListener('change', (evt) =>{
+    pricecal(duration.value, ticket.value, activity.value, food.value, num.value, false);
+});
+
+food.addEventListener('change', (evt)=>{
+    pricecal(duration.value, ticket.value, activity.value, food.value, num.value, false);
+});
+
+duration.addEventListener('change', (evt)=>{
+    pricecal(duration.value, ticket.value, activity.value, food.value, num.value, false);
+});
+
+ticket.addEventListener('change', (evt)=>{
+    pricecal(duration.value, ticket.value, activity.value, food.value, num.value, false);
 });
