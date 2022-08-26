@@ -259,7 +259,7 @@ function pricecal(time, ticket, activity, food, num, table){
             }
         }
         else if(duration.value === "48 hours"){
-            price = Fadult + activityprice + (Lfull * 2) + foodTotal;
+            price = Fadult + activityprice + (Ffull * 2) + foodTotal;
             foodTotal = food * 500;
             total += price * num;
             if(table == true){
