@@ -32,7 +32,7 @@ window.addEventListener("load", function(){
 let total = 0;
 
 //prices
-let activityprice = 1000;
+let activityprice = 0;
 let Annual_Pass_Local = 4500;
 let Annual_Pass_Foreign = 15000;
 
