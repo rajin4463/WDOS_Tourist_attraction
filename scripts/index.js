@@ -30,6 +30,7 @@ window.addEventListener("load", function(){
 
 //total 
 let total = 0;
+let foodTotal;
 
 //prices
 let activityprice = 0;
@@ -54,7 +55,7 @@ function carttable(total, ticket, time, price, activity, num){
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     cell1.innerHTML = `You Have Purchased a ${activity} ticket <br> for ${ticket} X ${num} (${time}).\n`;
-    cell2.innerHTML = `${price * num}/=`;
+    cell2.innerHTML = `${price * num + foodTotal}/=`;
 
     tot.innerHTML = `Rs.${total}/=`;
     cart.style.visibility = "visible";
@@ -66,7 +67,7 @@ function annualcarttable(total, ticket, price, num){
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     cell1.innerHTML = `You Have Purchased <br> ${ticket} X ${num} ticket(s).\n`;
-    cell2.innerHTML = `${price * num}/=`;
+    cell2.innerHTML = `${price * num + foodTotal}/=`;
 
     tot.innerHTML = `Rs.${total}/=`;
     cart.style.visibility = "visible";
