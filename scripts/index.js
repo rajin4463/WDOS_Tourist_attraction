@@ -35,6 +35,7 @@ let total = 0;
 let activityprice = 1000;
 let Annual_Pass_Local = 4500;
 let Annual_Pass_Foreign = 15000;
+
 let Fadult = 5000;
 let Fchild = 2500;
 let Ladult = 1000;
