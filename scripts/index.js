@@ -236,7 +236,7 @@ function pricecal(time, ticket, activity, food, num, table){
     else if(ticket==="Foregin-Adult"){
         if(time === "12 hours"){
             foodTotal = food * 500;
-            price = Lchild + activityprice + Fhalf + foodTotal;
+            price = Fadult + activityprice + Fhalf + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
@@ -248,7 +248,7 @@ function pricecal(time, ticket, activity, food, num, table){
         }
         else if(time === "24 hours"){
             foodTotal = food * 500;
-            price = Lchild + activityprice + Ffull + foodTotal;
+            price = Fadult + activityprice + Ffull + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
@@ -272,7 +272,7 @@ function pricecal(time, ticket, activity, food, num, table){
         }
         else{
             foodTotal = food * 500;
-            price = Lchild + activityprice + foodTotal;
+            price = Fadult + activityprice + foodTotal;
             total += price * num;
             if(table == true){
                 carttable(total, ticket, time, price, activity, num);
