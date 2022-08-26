@@ -327,8 +327,6 @@ submit.addEventListener("click",function(addtocart){
         alert('Please select a amount(s)');
     } 
 
-    //calculate loyalty points 
-    //overallHead = overallHead + num.value;
     if (num.value >= 3){
         if(localStorage.getItem(`loyalty points`)>0){
             let loyaltyPoints = parseInt(localStorage.getItem(`loyalty points`));
@@ -439,9 +437,7 @@ order_fav.addEventListener('click', function(orderfav){
 let loyal = document.getElementById('loyal');
 
 loyal.addEventListener('click', function(evt){
-    //evt.preventDefault
     alert(`Your loyalty points are ${getLoyalPoints}`);
-    
 });
 
 
